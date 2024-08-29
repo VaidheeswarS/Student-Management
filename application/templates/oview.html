@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Viewing Candidates</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'oview.css' %}">
+    </head>
+    <body>
+        <!-- <form action="#" method="POST"> -->
+            <div>
+            <table border="1px">
+               
+                <tr id="tr-h">
+                    <th>S.No</th>
+                    <th>First_Name</th>
+                    <!-- <th>Mid_Name</th> -->
+                    <th>Last_Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>D_O_B</th>
+                    <th>school_name</th>
+                    <th>STD</th>
+                    
+                    <th>Parents_Phone_Number</th>
+                    <th>Email_id</th>
+                    <th>Photo</th>
+                    <th>Password</th>
+                    <th>Update / Delete</th>
+                </tr>
+                {% for datas in o_value %}
+                
+                <tr class="status">
+                    <td>{{datas.S_No}}</td>
+                    <td>{{datas.First_Name}}</td>
+                    <!-- <td>{{datas.Mid_Name}}</td> -->
+                    <td>{{datas.Last_Name}}</td>
+                    <td>{{datas.Gender}}</td>
+                    <td>{{datas.Age}}</td>
+                    <td>{{datas.D_O_B}}</td>
+                    <td>{{datas.School}}</td>
+                    <td>{{datas.STD}}-{{datas.section}} Sec</td>
+                    <td>{{datas.Parents_Phone_Number}}</td>
+                    <td>{{datas.Email_id}}</td>
+                    <td><img src="{{datas.Photo.url}}" alt="{{datas.Photo}}" height="100px" width="300px"></td>
+                    <td>{{datas.Password}}</td>
+                    <td>
+                        <form action="{% url 'updating' datas.Email_id %}" >
+                            <button class="up">Update</button>
+                        </form>
+                        <form action="{% url 'deleting' datas.Email_id %}" method="POST">
+                            {%csrf_token%}
+                            <button class="del">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                
+            {% endfor %}
+            </table>
+            </div>
+            <hr>
+            
+        <!-- </form> -->
+
+    </body>
+</html>

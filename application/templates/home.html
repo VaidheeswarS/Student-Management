@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Management</title>
+        {% load static %}
+        <!-- <link rel="stylesheet" href="{% static 'home.css' %}"> -->
+         <link rel="stylesheet" href="{% static 'home1.css' %}">
+    </head>
+    <body>
+        <ul>
+            <li><h1>Student Management</h1></li>
+        </ul>
+        <h2>Students are all Always welcomed !</h2>
+        <div>
+            <form action="/register/">
+                <button>Register</button>
+            </form>
+            <form action="/login/">
+                <button>Login / Sign in</button>
+            </form>
+            <form action="/logout/">
+                <button>Logout</button>
+            </form>
+            <form action="/overallview/">
+                <button>View Students</button>
+            </form>
+        </div>
+
+    </body>
+</html>

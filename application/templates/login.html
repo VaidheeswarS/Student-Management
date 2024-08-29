@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login / Signin</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'login.css' %}">
+    </head>
+    <body>
+        <form action="/login/" method="POST">
+            {%csrf_token%}
+            <table>
+                <tr>
+                    <td><input type="text" name="email" placeholder="Login Id"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="password" placeholder="Password"></td>
+                </tr>
+                <tr>
+                    <td><Button>Login</Button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

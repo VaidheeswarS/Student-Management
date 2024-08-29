@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Profile</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'view.css' %}">
+    </head>
+    <body>
+        <form action="{% url 'updating' datas.Email_id %}">
+            <!-- <h1>view:{{datas}}</h1> -->
+    
+            <table>
+                <tr>
+                    <td>First Name</td>
+                    <td>{{datas.First_Name}}</td>
+                </tr>
+                <!-- <tr>
+                    <td>Middle Name</td>
+                    <td>{{datas.Mid_Name}}</td>
+                </tr> -->
+                <tr>
+                    <td>Last Name</td>
+                    <td>{{datas.Last_Name}}</td>
+                </tr>
+                <tr>
+                    <td>School Name</td>
+                    <td>{{datas.School}}</td>
+                </tr>
+                <tr>
+                    <td>Standard</td>
+                    <td>{{datas.STD}}</td>
+                </tr>
+                <tr>
+                    <td>Section</td>
+                    <td>{{datas.section}}</td>
+                </tr>
+                <tr>
+                    <td>D.O.B</td>
+                    <td>{{datas.D_O_B}}</td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>{{datas.Age}}</td>
+                </tr>
+                <tr>
+                    <td>Parents Phone Number</td>
+                    <td>{{datas.Parents_Phone_Number}}</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>{{datas.Gender}}</td>
+                </tr>
+                <tr>
+                    <td>Email id</td>
+                    <td>{{datas.Email_id}}</td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>{{datas.Password}}</td>
+                </tr>
+                <tr>
+                    <td>Photo</td>
+                    <td> <img src="{{datas.Photo.url}}" alt="" height="100px" width="200px"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button>Update</button>
+                    </td>
+                    <td>
+                        <form action="{%url 'deleting' datas.Email_id %}">
+                            <button>Delete</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/search/">
+                            <button>Back</button>
+                        </form>
+                    </td>
+                </tr>
+              
+            </table>
+        </form>
+
+    </body>
+</html>

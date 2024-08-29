@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Update my Data</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'update.css' %}">
+    </head>
+    <body>
+        <!-- <h2>Students Must need to be Registered.</h2>         -->
+        <form action="{% url 'updating' data.Email_id %}" method="POST">
+            {%csrf_token%}
+            <table>
+            
+                <tr>
+                    <!-- <td><label for="">Student Name</label></td> -->
+                    <td><input readonly type="text" name="stuname" placeholder="First Name" value="{{data.First_Name}}"></td>
+                    <!-- <td><input type="text" name="midname" placeholder="Middle Name" value="{{data.Mid_Name}}"></td> -->
+                    <td><input type="text" name="lname" placeholder="Last Name" value="{{data.Last_Name}}"></td>
+                </tr>
+                <tr>
+                    <td><input readonly type="text" name="school_name" value="Sri Vidhya Bharathi Matric Hr Sec School"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" value="STD" readonly>
+                    </td>
+                    <td>
+                        <select name="std" id="" value="{{data.STD}}">
+                            <option name="std" value="LKG">LKG</option>
+                            <option name="std" value="UKG">UKG</option>
+                            <option name="std" value="1">1</option>
+                            <option name="std" value="2">2</option>
+                            <option name="std" value="3">3</option>
+                            <option name="std" value="4">4</option>
+                            <option name="std" value="5">5</option>
+                            <option name="std" value="6">6</option>
+                            <option name="std" value="7">7</option>
+                            <option name="std" value="8">8</option>
+                            <option name="std" value="9">9</option>
+                            <option name="std" value="10">10</option>
+                            <option name="std" value="11">11</option>
+                            <option name="std" value="12">12</option>                     
+                        </select>
+                    </td>
+                    <td>
+                        <select name="sec" value="{{data.section}}"id="">
+                            <option name="sec" value="A">A</option>
+                            <option name="sec" value="B">B</option>
+                            <option name="sec" value="C">C</option>
+                            <option name="sec" value="D">D</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="date" name="dob" value="{{data.D_O_B}}"></td>
+                    <td><input type="text" name="age" placeholder="Student Age" value="{{data.Age}}"></td>
+                    <td><input type="text" name="pphone" placeholder="Parent Phone Number" value="{{data.Parents_Phone_Number}}"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="email" placeholder="Email: abcd@gmail.com" value="{{data.Email_id}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Gender</label></td>
+                    <td>
+                        <input name="gender" type="radio" value="Male">Male
+                        <input name="gender" type="radio" value="Female">Female
+                        <input name="gender" type="radio" value="Human">Human
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input name="S_photo" type="file" value="{{data.Photo}}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="password" placeholder="Create Password" value="{{data.Password}}">
+                    </td>
+                </tr>
+                <tr>
+                    <td><button>Update my data</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

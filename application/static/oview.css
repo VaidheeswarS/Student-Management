@@ -1,0 +1,50 @@
+table{
+    width: 1600px;
+    /* border-style: solid; */
+    /* background-color: lightgray; */    
+    border-collapse: collapse;
+}
+th{
+    /* width: 1600px; */
+    /* background-color: pink; */
+    /* font-size: large; */
+}
+td{
+    text-align: center;
+}
+.status:hover{
+    background-color:rgb(202, 250, 250);
+}
+#tr-h{
+    background-color: skyblue;
+}
+button{
+    cursor: pointer;
+    border-style: solid;
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 3.5px;
+    width: 65px;
+    
+}
+.up{
+    border-color: rgb(10, 169, 231);
+    background-color: rgb(21, 174, 235);
+    color: white;
+}
+.up:hover{
+    border-color: rgb(70, 108,109);
+    background-color: rgb(70, 108, 109);
+}
+.del{
+    border-color: rgb(241, 69, 69);
+    background-color: rgb(241, 69, 69);
+    color: white;
+}
+.del:hover{
+    border-color: rgb(190, 27, 27);
+    background-color: rgb(202, 37, 37);
+} 
+.status{
+    background-color: rgb(186, 193, 201);
+}

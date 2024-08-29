@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search</title>
+    </head>
+    <style>
+        *{
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+        form{
+            /* height: 600px; */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        input{
+            font-size: xx-large;
+            padding-left: 15px;
+            margin-top: 250px;
+            border-style: solid;
+            border-color: skyblue;
+            border-right: none;
+            padding-bottom: 5px;
+        }
+        button{
+            margin-top: 250px;
+            width: 100px;
+            border-left: none;
+            border-style: solid;
+            border-color: skyblue;
+            background-color: skyblue;
+            color: white;
+            font-size: large;
+        }
+        input::placeholder{
+            font-size: 25px;
+        }
+        table{
+            margin-top: 20px;
+            /* background-color: aqua; */
+            border-collapse: collapse;
+        }
+        #tr-h{
+            background-color: cadetblue;
+            padding-top: 2px;
+            padding-bottom: 2px;
+        } 
+        th{
+            /* background-color: rosybrown; */
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+        .tr-view:hover{
+            background-color: rgb(171, 239, 241);
+        }
+    </style>
+    <body>
+        <form action="/search/" method="POST">
+            {%csrf_token%}
+            <input type="text" name="search_value" placeholder="Search Students">
+            <button>Search</button>
+        </form>
+            <table border="1px">
+               
+                <tr id="tr-h">
+                    <th>S_No</th>
+                    <th>First_Name</th>
+                    <th>Last_Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>D_O_B</th>
+                    <th>school_name</th>
+                    <th>STD</th>
+                    <th>Parents_Phone_Number</th>
+                    <th>Email_id</th>
+                    <th>Photo</th>
+                    <th>Password</th>
+                </tr>
+                
+                
+                <tr class="tr-view">
+                    <td>{{person.S_No}}</td>
+                    <td>{{person.First_Name}}</td>
+                    <td>{{person.Last_Name}}</td>
+                    <td>{{person.Gender}}</td>
+                    <td>{{person.Age}}</td>
+                    <td>{{person.D_O_B}}</td>
+                    <td>{{person.School}}</td>
+                    <td>{{person.STD}}-{{person.section}} sec</td>
+                    <td>{{person.Parents_Phone_Number}}</td>
+                    <td>{{person.Email_id}}</td>
+                    <td>{{person.Photo}}</td>
+                    <td>{{person.Password}}</td>
+                </tr>
+                        
+            </table>
+          
+    </body>
+</html>
